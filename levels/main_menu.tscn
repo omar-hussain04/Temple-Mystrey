@@ -18,7 +18,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6flho")
 
-[node name="Main" type="Sprite2D" parent="."]
+[node name="Main Sreen" type="Sprite2D" parent="."]
 position = Vector2(734, 409)
 scale = Vector2(1.0483, 1.07682)
 texture = ExtResource("2_ofye2")
