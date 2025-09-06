@@ -1,0 +1,32 @@
+name: Build and Export Game
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Godot
+        uses: firebelley/godot-export@v5
+        with:
+          godot-version: "4.2.2" # غيّرها حسب نسخة جودوت عندك
+
+      - name: Export Web
+        uses: firebelley/godot-export@v5
+        with:
+          godot-version: "4.2.2" # نفس النسخة
+          export-template: "Web"
+          export-path: build/web/index.html
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: web
+          path: build/web
