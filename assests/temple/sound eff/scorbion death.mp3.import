@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bys6dsku1j54l"
+path="res://.godot/imported/scorbion death.mp3-69e76d7a24c32caab29caf646de65b28.mp3str"
+
+[deps]
+
+source_file="res://assests/temple/sound eff/scorbion death.mp3"
+dest_files=["res://.godot/imported/scorbion death.mp3-69e76d7a24c32caab29caf646de65b28.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

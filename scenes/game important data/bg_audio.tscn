@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://gpljcoafnun8"]
+
+[ext_resource type="AudioStream" uid="uid://dt825pe3d2db2" path="res://assests/temple/sound eff/bg sound.mp3" id="1_b3lih"]
+
+[node name="bg audio" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_b3lih")
+volume_db = -27.182
+autoplay = true

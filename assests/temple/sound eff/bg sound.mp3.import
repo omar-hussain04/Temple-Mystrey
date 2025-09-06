@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dt825pe3d2db2"
+path="res://.godot/imported/bg sound.mp3-ca4ee6ed49358068eea774d7119f80d9.mp3str"
+
+[deps]
+
+source_file="res://assests/temple/sound eff/bg sound.mp3"
+dest_files=["res://.godot/imported/bg sound.mp3-ca4ee6ed49358068eea774d7119f80d9.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

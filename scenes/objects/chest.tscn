@@ -1,0 +1,79 @@
+[gd_scene load_steps=11 format=3 uid="uid://d3yluqdjrw7df"]
+
+[ext_resource type="Texture2D" uid="uid://dboexc1yax28u" path="res://assests/temple/items/Treasure_Box.png" id="1_bas4e"]
+[ext_resource type="Script" uid="uid://d2jmwhmxw52mb" path="res://scripts/chest.gd" id="1_opa1x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opa1x"]
+atlas = ExtResource("1_bas4e")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_acra8"]
+atlas = ExtResource("1_bas4e")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pev8c"]
+atlas = ExtResource("1_bas4e")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nj372"]
+atlas = ExtResource("1_bas4e")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vikd"]
+atlas = ExtResource("1_bas4e")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eiphe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opa1x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_acra8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pev8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nj372")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vikd")
+}],
+"loop": false,
+"name": &"open",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_acra8"]
+size = Vector2(22, 24)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_opa1x"]
+radius = 35.3553
+
+[node name="chest" type="Area2D"]
+script = ExtResource("1_opa1x")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(0, -13)
+scale = Vector2(1.5625, 1.5625)
+sprite_frames = SubResource("SpriteFrames_eiphe")
+animation = &"open"
+frame = 4
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_acra8")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="open area" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -12)
+shape = SubResource("CircleShape2D_opa1x")
+debug_color = Color(0.517042, 0.575639, 0, 0.42)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

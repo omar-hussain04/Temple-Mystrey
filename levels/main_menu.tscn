@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://dwbdo0hj1mgqy"]
+
+[ext_resource type="Script" uid="uid://d0xlwlwxeaue5" path="res://scripts/main ui.gd" id="1_6flho"]
+[ext_resource type="Texture2D" uid="uid://bms85xnkdxpnc" path="res://assests/temple/tile maps/main.png" id="2_ofye2"]
+[ext_resource type="Texture2D" uid="uid://7s022o48wer" path="res://assests/temple/tile maps/buttons/q1.png" id="3_7ty7c"]
+[ext_resource type="Texture2D" uid="uid://w5xwu3tosjpn" path="res://assests/temple/tile maps/buttons/q3.png" id="4_lppu5"]
+[ext_resource type="Texture2D" uid="uid://bv2peknnydhlv" path="res://assests/temple/tile maps/buttons/q2.png" id="5_6xkr4"]
+[ext_resource type="Texture2D" uid="uid://447mhv6iwudx" path="res://assests/temple/tile maps/buttons/s1.png" id="6_b8wrl"]
+[ext_resource type="Texture2D" uid="uid://bsl7qpqb17mtj" path="res://assests/temple/tile maps/buttons/s3.png" id="7_s01ir"]
+[ext_resource type="Texture2D" uid="uid://5wvcdoafq7lm" path="res://assests/temple/tile maps/buttons/s2.png" id="8_w3h5g"]
+
+[node name="main menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6flho")
+
+[node name="Main" type="Sprite2D" parent="."]
+position = Vector2(734, 409)
+scale = Vector2(1.0483, 1.07682)
+texture = ExtResource("2_ofye2")
+
+[node name="quit" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 661.0
+offset_top = 611.0
+offset_right = 789.0
+offset_bottom = 739.0
+texture_normal = ExtResource("3_7ty7c")
+texture_pressed = ExtResource("4_lppu5")
+texture_hover = ExtResource("5_6xkr4")
+texture_disabled = ExtResource("3_7ty7c")
+texture_focused = ExtResource("5_6xkr4")
+
+[node name="start" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 629.0
+offset_top = 359.0
+offset_right = 844.0
+offset_bottom = 554.0
+texture_normal = ExtResource("6_b8wrl")
+texture_pressed = ExtResource("7_s01ir")
+texture_hover = ExtResource("8_w3h5g")
+texture_disabled = ExtResource("6_b8wrl")
+texture_focused = ExtResource("8_w3h5g")
+stretch_mode = 4
+
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
